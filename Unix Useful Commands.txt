@@ -1,0 +1,32 @@
+Useful Linix/Unix Commands:
+
+#command to find largest files more 5gb and zip
+find . -type f -size +500000000c -mtime +65 -exec gzip {} \;
+
+#command to find the largest files
+find -type f -size +500000000c -mtime +65
+
+#command to find the largest files on solaris system
+ls -l | sort +4rn | more
+
+#command to split large file and create a new file based number of rows
+awk "NR>1 && NR<=1249 {print \$0}" ac_bis2_qualit.20170801.txt > Global_Aqua_2_1249
+
+#command to find the particular file on linux
+locate *filename1*
+
+#command to keep linux session active on putty/shell
+TMOUT=0
+
+#command to convert file from ASCII to EBCDIC
+dd conv=ebcdic if=abc.txt of=abc.ebcdic
+
+#command to see the difference on files
+vi diff file1 file2
+
+#command to search multiple strings in a file
+grep -E "string1|string2" filename
+
+#other commands
+find . -name "*.c" | xargs rm -rf
+find . -name '*.c' | xargs grep 'stdlib.h'
